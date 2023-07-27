@@ -1,23 +1,23 @@
 package com.automationexercise.login;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayName("Testes automatizados do site Automation Exercise")
 public class Login {
 
 
     @Test
+    @Order(1)
     @DisplayName("Criar uma conta no site automationexercise")
-    public void criarUmaContaNoSiteAutomationExercise() {
+    public void criarUmaContaNoSiteAutomationexercise() {
         //Abrir o navegador e maximizar a tela
         WebDriverManager.chromedriver().setup();
         WebDriver navegador = new ChromeDriver();
@@ -29,7 +29,7 @@ public class Login {
 
         //Clicar em [signup/login] e validar que o título 'new user signup' é exibido
         navegador.findElement(By.xpath("//a[@href='/login']")).click();
-        String newUser = String.valueOf(navegador.findElement((By.xpath("//a[@href='/login']"))));
+        String newUser = String.valueOf(navegador.findElement((By.xpath("//h2[contains(.,'New User Signup!')]"))));
 
         //Preencher os campos nome e e-mail
         navegador.findElement(By.xpath("//input[@name='name']")).sendKeys("Clara Mendes");
@@ -66,5 +66,72 @@ public class Login {
                 "You can now take advantage of member privileges to enhance your online shopping experience with us.\n", removeNomeDoBotao);
         navegador.quit();
     }
-    
+
+    @Test
+    @Order(2)
+    @DisplayName("Realizar o login no site automationexercise")
+    public void realizarOLoginNoSiteAutomationexercise() {
+        //Abrir o navegador e maximizar a tela
+        WebDriverManager.chromedriver().setup();
+        WebDriver navegador = new ChromeDriver();
+        navegador.manage().window().maximize();
+        navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        //Abrir o site automationexercise
+        navegador.get("https://automationexercise.com/");
+
+        //Clicar em [signup/login] e validar que o título 'new user signup' é exibido
+        navegador.findElement(By.xpath("//a[@href='/login']")).click();
+        String newUser = String.valueOf(navegador.findElement((By.xpath("//h2[contains(.,'Login to your account')]"))));
+
+        //Informe e-mail e senha
+        navegador.findElement(By.xpath("//input[@data-qa='login-email']")).sendKeys("clara.mendes@teste.com.br");
+        navegador.findElement(By.xpath("//input[@name='password']")).sendKeys("Senha1!");
+
+        //Clicar no botão Login
+        navegador.findElement(By.xpath("//button[@data-qa='login-button']")).click();
+
+        //Verificar se a mensagem 'Logged in as' é exibida
+        String msgUsuarioLogado = navegador.findElement(By.xpath("//a[contains(.,'Logged in as Clara Mendes')]")).getText();
+        Assertions.assertEquals("Logged in as Clara Mendes", msgUsuarioLogado);
+        navegador.quit();
+    }
+
+    @Test
+    @Order(3)
+    @DisplayName("Realizar a exclusão da conta no site automationexercise")
+    public void realizarAExclusaoDaContaNoSiteAutomationExercise() {
+        //Abrir o navegador e maximizar a tela
+        WebDriverManager.chromedriver().setup();
+        WebDriver navegador = new ChromeDriver();
+        navegador.manage().window().maximize();
+        navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        //Abrir o site automationexercise
+        navegador.get("https://automationexercise.com/");
+
+        //Clicar em [signup/login] e validar que o título 'new user signup' é exibido
+        navegador.findElement(By.xpath("//a[@href='/login']")).click();
+        String newUser = String.valueOf(navegador.findElement((By.xpath("//h2[contains(.,'Login to your account')]"))));
+
+        //Informe e-mail e senha
+        navegador.findElement(By.xpath("//input[@data-qa='login-email']")).sendKeys("clara.mendes@teste.com.br");
+        navegador.findElement(By.xpath("//input[@name='password']")).sendKeys("Senha1!");
+
+        //Clicar no botão Login
+        navegador.findElement(By.xpath("//button[@data-qa='login-button']")).click();
+
+        //Clicar no botão Delete Account
+        navegador.findElement(By.xpath("//a[@href='/delete_account']")).click();
+        navegador.switchTo().activeElement().sendKeys(Keys.ENTER);
+
+        //Validar a mensagem de confirmação
+        String msgConfirmaExclusao = navegador.findElement(By.xpath("//div[@class='col-sm-9 col-sm-offset-1']")).getText();
+        String removeNomeDoBotao = msgConfirmaExclusao.replace("Continue", "");
+        Assertions.assertEquals("ACCOUNT DELETED!\n" +
+                "Your account has been permanently deleted!\n" +
+                "You can create new account to take advantage of member privileges to enhance your online shopping experience with us.\n", removeNomeDoBotao);
+        navegador.quit();
+    }
+
 }

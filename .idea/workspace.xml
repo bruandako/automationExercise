@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="682827b5-1d2b-418d-a80d-60a9743c7081" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/automationexercise/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/automationexercise/login/Login.java" afterDir="false" />
+    <list default="true" id="682827b5-1d2b-418d-a80d-60a9743c7081" name="Changes" comment="Criei o projeto automationExercise e a classe Login">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/automationexercise/login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automationexercise/login/Login.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Bruna Andako" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -50,10 +49,25 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Automacao/aulaPratica"
+    "last_opened_file_path": "C:/Aut-estudo/alliar-automated-tests-portal"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.Login">
+    <configuration name="Login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automationExercise" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.automationexercise.login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.automationexercise.login" />
+      <option name="MAIN_CLASS_NAME" value="com.automationexercise.login.Login" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Login.criarUmaContaNoSiteAutomationExercise" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="automationExercise" />
       <extension name="coverage">
@@ -70,8 +84,60 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Login.criarUmaContaNoSiteAutomationexercise" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automationExercise" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.automationexercise.login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.automationexercise.login" />
+      <option name="MAIN_CLASS_NAME" value="com.automationexercise.login.Login" />
+      <option name="METHOD_NAME" value="criarUmaContaNoSiteAutomationexercise" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login.realizarAExclusaoDaContaNoSiteAutomationExercise" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automationExercise" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.automationexercise.login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.automationexercise.login" />
+      <option name="MAIN_CLASS_NAME" value="com.automationexercise.login.Login" />
+      <option name="METHOD_NAME" value="realizarAExclusaoDaContaNoSiteAutomationExercise" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login.realizarOLoginNoSiteAutomationexercise" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="automationExercise" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.automationexercise.login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.automationexercise.login" />
+      <option name="MAIN_CLASS_NAME" value="com.automationexercise.login.Login" />
+      <option name="METHOD_NAME" value="realizarOLoginNoSiteAutomationexercise" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Login" />
+        <item itemvalue="JUnit.Login.realizarAExclusaoDaContaNoSiteAutomationExercise" />
+        <item itemvalue="JUnit.Login.criarUmaContaNoSiteAutomationexercise" />
+        <item itemvalue="JUnit.Login.realizarOLoginNoSiteAutomationexercise" />
         <item itemvalue="JUnit.Login.criarUmaContaNoSiteAutomationExercise" />
       </list>
     </recent_temporary>
@@ -86,5 +152,9 @@
       <updated>1690395100383</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Criei o projeto automationExercise e a classe Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criei o projeto automationExercise e a classe Login" />
   </component>
 </project>
